@@ -1,39 +1,13 @@
-var num = 0;
-var watertoday;
-
-function drink(){
-    num = num +1;
-    if (num < 9)
-    {
-        document.getElementById("Num").innerHTML = num;
-    }
-}
-
-var nbottles =   setInterval(bottles,100);
-let count=1;
-
-function bottles() {
-  count++;
-  if (watertoday !== undefined)
-  {
-    document.getElementById("numtodaybottles").innerHTML=count;
-    document.getElementById("numbbubottles").innerHTML=count*26;
-    document.getElementById("numtotalbottles").innerHTML=count*235;
-        if (count == watertoday)
-        {
-            clearInterval(nbottles);
-        }
-    }
-}
+var vwatertoday;
+var uemail;
+var docid;
 
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
-      console.log('user logged in: ', user.email);
       setupUI(user);
       load(user);
     } else {
-      console.log('user logged out');
       setupUI();
     }
   })
@@ -63,15 +37,45 @@ logout.addEventListener('click', (e) => {
 });
 
 function load(user){
+  uemail = user.email;
   db.collection('users').where('email','==',user.email).get().then(snapshot => {
   //db.collection('users').get().then(snapshot => {
+    
       snapshot.docs.forEach(doc => {
+          docid = doc.id;
           document.getElementById("id").innerHTML = doc.data().Firstname;
           document.getElementById("bu").innerHTML = doc.data().group;
-          watertoday = doc.data().watertoday;
-          document.getElementById("Num").innerHTML = watertoday;
-          document.getElementById("Num").innerHTML = watertoday;
+          vwatertoday = doc.data().watertoday;
+          document.getElementById("Num").innerHTML = vwatertoday;
+          
       });
       
 });
+}
+
+var nbottles =   setInterval(bottles,100);
+var count=-10;
+function bottles() {
+  
+  if (vwatertoday>-1 && vwatertoday !== undefined)
+  {
+    document.getElementById("numtodaybottles").innerHTML=Math.abs(count*16*-1);
+    document.getElementById("numbbubottles").innerHTML=Math.abs(count*26*-1);
+    document.getElementById("numtotalbottles").innerHTML=Math.abs(count*235*-1);
+        if (count == vwatertoday)
+        {
+            clearInterval(nbottles);
+        }
+    }
+    count++;
+ }
+
+ function drink(){
+  if (vwatertoday < 8)
+   {
+     vwatertoday = vwatertoday +1;
+     document.getElementById("Num").innerHTML = vwatertoday;
+     db.collection('users').doc(docid).update({watertoday : vwatertoday});
+   } 
+   
 }

@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap Material css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Firebase Libs-->
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <!-- Material icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+
+    <title>H2O</title>
+</head>
+<body>
+
+<!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo left">
+        <img src="h2o.png" style="width: 50px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right ">
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+          
+        </ul>
+    </div>
+  </nav>
+
+  <!-- SIGN UP MODAL -->
+<div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <form id="signup-form" class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="fname" type="text" class="validate">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <input id="signup-email" type="email" class="validate">
+              <label for="signup-email">Email</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">password</i>
+              <input type="password" id="signup-password" required />
+              <label for="signup-password">Choose password</label>
+            </div>
+            <label>Select Group</label>
+          <select id="bu" class="browser-default col s6">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="BBU">BBU</option>
+            <option value="GTA">GTA</option>
+            <option value="GMA">GMA</option>
+            <option value="NCR">NCR</option>
+          </select>
+          </div>
+          <button class="btn blue darken-2 z-depth-1">Sign up</button>
+          <p class="error pink-text center-align"></p>
+        </form>
+      </div>
+      </div>
+      </div>
+
+<!-- LOGIN MODAL -->
+<div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <p class="error pink-text center-align"></p>
+      </form>
+    </div>
+  </div>
+
+<!-- Pre login content -->
+<div class="container-lg text-center shadow pb-3">
+  <div class="text-center">
+      <div class="row">
+          <div class="col-12 text-center shadow p-3 mb-1 bg-white rounded">
+              <img src="FTG.png"  alt="..." class="rounded">
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center shadow p-3 mb-1 bg-white rounded">
+          <a class="waves-effect waves-light btn-small modal-trigger" data-target="modal-signup">
+              Sign Up
+          </a>
+          <a class="waves-effect waves-light btn-small modal-trigger" data-target="modal-login">
+            Login
+        </a>
+        </div>
+    </div>
+      <div class="row">
+          <div class="col-12 shadow p-3 mb-1 bg-white rounded">
+              Single use plastics are wreaking havoc on the planet. Help<sub>2</sub>O is an attempt to inspire the world to reuse and reduce our carbon foot-print. It also helps your well being by helping you track your water consumption. 
+              Everytime you drink water that is not from single use bottle, track it under this app. Our sponsors donate $1 for every 8 glasses of water tracked by the app. Stay hydrated, track reusable water consumed, help feed the needy. 
+              Form a group and get a chance to donate your earnings to a registered Canadian charity<sup>1</sup>
+          </div>
+          <div class="col-12 shadow p-3 mb-1 bg-white rounded">
+              <small>1. Conditions apply. Email for details</small>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="col-12 container-lg text-center p-3">
+  © <a href="http://www.evolunteer.ca" class="href">www.evolunteer.ca</a>, All rights reserved.
+</div>
+<!-- Prelogin content-->
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="scripts/myfirebase.js"></script>  
+<script type="text/javascript" src="scripts/app.js"></script>
+
+</body>
+</html>
