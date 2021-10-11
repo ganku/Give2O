@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Material css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Firebase Libs-->
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <!-- Material icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    
+    <title>H2O</title>
+</head>
+<body>
+<!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="h2o.png" style="width: 30px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout" >Logout</a>
+          </li>
+          
+        </ul>
+    </div>
+  </nav>
+<!-- Body Content-->
+  <div >
+    <p class="display-2 text-primary text-center shadow p-3 mb-1 bg-white rounded">Help<sub>2</sub>O</p>
+</div>
+
+<div class="container-lg">
+    <div class="row ">
+    <div class="col-6 text-center shadow p-3 mb-1 bg-white rounded">
+        <h2 class="text-muted fs-4">Hello <span id="id"></span></h2>
+    </div>
+    <div class="col-6 text-end shadow p-3 mb-1 bg-white rounded">
+        <h2 class="text-muted fs-5">Group <span id="bu"></span></h2>
+    </div>
+    </div>
+</div>
+
+
+<div class="container-lg fw-light border">
+    <div class="row ">
+        <div class="col-12 text-success fs-4 text-center shadow p-3 mb-1 bg-white rounded">
+            Bottles saved <br>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-4 border text-success text-center shadow p-3 mb-1 bg-white rounded">
+        Today <br>
+        <span id="numtodaybottles" class="display-4"></span>
+        </div>
+        <div class="col-4 border text-danger text-center shadow p-3 mb-1 bg-white rounded">
+            BBU <br><span id="numbbubottles" class="display-4"></span>
+        </div>
+        <div class="col-4 border text-info text-center shadow p-3 mb-1 bg-white rounded">
+            Lifetime <br><span id="numtotalbottles" class="display-4"></span>
+        </div>
+        </div>
+  </div>
+
+  <div class="container-lg text-center shadow pb-3">
+    <img src="glass.png" alt="..." class="rounded">
+    <div class="text-center">
+        <div class="row">
+            <div class="col-3 fs-4 text-end">
+                Today
+            </div>
+            <div class="col-3   text-center">
+                
+                    <h1><span id="Num" class="display-4 text-success"></span></h1>
+                
+            </div>
+            
+            <div class="col-3   text-center" onclick="drink()">
+                <a class="btn-large halfway-fab waves-effect waves-light blue">
+                    <i class="material-icons">add</i>
+                  </a>
+            </div>
+            <div class="col-3 text-center">
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="col-12 container-lg text-center p-3">
+    © <a href="http://www.evolunteer.ca" class="href">www.evolunteer.ca</a>, All rights reserved.
+</div>
+
+  <!-- Body Content-->
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="scripts/myfirebase.js"></script>  
+<script type="text/javascript" src="scripts/app2.js"></script>
+</body>
+</html>
