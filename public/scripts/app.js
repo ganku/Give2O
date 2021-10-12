@@ -6,8 +6,8 @@ auth.onAuthStateChanged(user => {
       //Once authenticated direct to app
       window.location.replace("app.html");
     } else {
-      console.log('user logged out');
       setupUI();
+      //window.location.replace("index.html");
     }
   })
 
@@ -71,7 +71,6 @@ function setupUser()
     }
   ).then((docref) => { }).catch(err => {console.log(err.message);
   });
-  alert('user created');
 }
 
 // login

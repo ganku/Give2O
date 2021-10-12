@@ -17,7 +17,7 @@
     <title>H2O</title>
 </head>
 <body>
-<!-- NAVBAR -->
+<!-- NAVBAR 
   <nav class="z-depth-0 grey lighten-4">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">
@@ -30,7 +30,7 @@
           
         </ul>
     </div>
-  </nav>
+  </nav> -->
 <!-- Body Content-->
   <div >
     <p class="display-2 text-primary text-center shadow p-3 mb-1 bg-white rounded">Help<sub>2</sub>O</p>
@@ -40,6 +40,11 @@
     <div class="row ">
     <div class="col-6 text-center shadow p-3 mb-1 bg-white rounded">
         <h2 class="text-muted fs-4">Hello <span id="id"></span></h2>
+        
+        <a class="" id="logout">
+          <i class="material-icons prefix">logout</i>
+          Logout
+      </a>
     </div>
     <div class="col-6 text-end shadow p-3 mb-1 bg-white rounded">
         <h2 class="text-muted fs-5">Group <span id="bu"></span></h2>
@@ -71,23 +76,15 @@
   <div class="container-lg text-center shadow pb-3">
     <img src="glass.png" alt="..." class="rounded">
     <div class="text-center">
-        <div class="row">
-            <div class="col-3 fs-4 text-end">
-                Today
-            </div>
-            <div class="col-3   text-center">
-                
-                    <h1><span id="Num" class="display-4 text-success"></span></h1>
-                
-            </div>
-            
-            <div class="col-3   text-center" onclick="drink()">
+        <div class="row justify-content-center">
+          
+          
+            <div class="col-3 text-warning text-center" onclick="drink()">
+              Today <br>
+              <span id="Num" class="display-4"></span>
                 <a class="btn-large halfway-fab waves-effect waves-light blue">
                     <i class="material-icons">add</i>
                   </a>
-            </div>
-            <div class="col-3 text-center">
-                
             </div>
             
         </div>

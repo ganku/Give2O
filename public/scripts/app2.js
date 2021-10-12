@@ -77,5 +77,6 @@ function bottles() {
      document.getElementById("Num").innerHTML = vwatertoday;
      db.collection('users').doc(docid).update({watertoday : vwatertoday});
    } 
-   
+   nbottles =   setInterval(bottles,100);
+   count=0;
 }
